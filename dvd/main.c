@@ -1,6 +1,6 @@
 //
 //  main.c
-//  nicolaiSnake
+//  dvd
 //
 //  Created by Nicolai Skye on 5/29/22.
 //
@@ -20,7 +20,6 @@ enum yDirection {
     Down,
 };
 
-void drawBox(int height, int width, int startx, int starty);
 void drawBorder(int winh, int winw, char *ch);
 
 int main() {
@@ -28,8 +27,6 @@ int main() {
     int window_height, window_width;
     enum xDirection xdir;
     enum yDirection ydir;
-    
-    
     
     initscr(); /* start curses mode */
     raw(); /* line buffering disabled */
@@ -93,7 +90,7 @@ int main() {
 
         drawBorder(window_height, window_width, '#');
         refresh();
-//        move(window_height, window_width); // doesn't seem to work
+
         if (getch() == 'q')
             break;
     }
@@ -102,22 +99,6 @@ int main() {
     
     return 0;
 }
-
-
-void drawBox(int height, int width, int startx, int starty /*, WINDOW *win*/) {
-    
-//    if (win == NULL)
-//        win = stdscr;
-    
-    for (size_t i = 0; i < height; ++i) {
-        for (size_t j = 0; j < width; ++j) {
-            mvaddch(starty+i, startx+j, '#');
-            
-        }
-    }
-    refresh();
-}
-
 
 void drawBorder(int winh, int winw, char *ch) {
     for (int wrow = 0; wrow < winh; ++wrow) {

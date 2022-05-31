@@ -1,7 +1,7 @@
 .DEFAULT_GOAL: snake
 
 snake:
-	cc -o snake nicolaiSnake/main.c -lncurses
+	cc -o dvd dvd/main.c -lncurses
 
 clean:
-	rm snake
+	rm dvd
