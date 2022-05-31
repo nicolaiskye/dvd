@@ -67,9 +67,6 @@ int main() {
         mvaddch(y, x+2, 'D');
         attroff(A_BOLD);
         
-        drawBox(5, 10, 5, 5);
-        drawBox(8, 15, 45, 15);
-        
         if (x+4 >= window_width)
             xdir = Left;
         if (x-1 <= 0)
